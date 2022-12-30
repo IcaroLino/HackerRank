@@ -20,5 +20,24 @@ describe('plusMinus Test', () => {
     expect(logSpy).toHaveBeenCalledWith('0.333333');
     expect(logSpy).toHaveBeenCalledWith('0.166667');
   });
+});
+
+describe('miniMaxSum Test', () => {
+  it('Must calls 1 console.log', () => {
+    const logSpy = jest.spyOn(console, 'log');
+
+    miniMaxSum([1, 2, 3, 4, 5]);
+
+    expect(logSpy).toHaveBeenCalled();
+    expect(logSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('Must print two integers', () => {
+    const logSpy = jest.spyOn(console, 'log');
+
+    miniMaxSum([1, 2, 3, 4, 5]);
+
+    expect(logSpy).toHaveBeenCalledWith('10 14');    
+  });
 
 });
