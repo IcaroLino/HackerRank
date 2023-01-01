@@ -1,5 +1,8 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import {
+  describe, expect, it, jest,
+} from '@jest/globals';
 import plusMinus from '../src/plusMinus';
+import miniMaxSum from '../src/miniMaxSum';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -23,21 +26,12 @@ describe('plusMinus Test', () => {
 });
 
 describe('miniMaxSum Test', () => {
-  it('Must calls 1 console.log', () => {
+  it('Must calls console.log with two numbers', () => {
     const logSpy = jest.spyOn(console, 'log');
 
     miniMaxSum([1, 2, 3, 4, 5]);
 
     expect(logSpy).toHaveBeenCalled();
-    expect(logSpy).toHaveBeenCalledTimes(1);
+    expect(logSpy).toHaveBeenCalledWith(10, 14);
   });
-
-  it('Must print two integers', () => {
-    const logSpy = jest.spyOn(console, 'log');
-
-    miniMaxSum([1, 2, 3, 4, 5]);
-
-    expect(logSpy).toHaveBeenCalledWith('10 14');    
-  });
-
 });
