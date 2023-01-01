@@ -9,5 +9,14 @@
  */
 
 export default function timeConversion(s) {
+  const timeSplitted = s.split(':');
+  const hours = parseInt(timeSplitted[0], 10);
+  const period = timeSplitted[2].slice(2);
 
+  timeSplitted[2] = timeSplitted[2].slice(0, 2);
+  if (period === 'PM' && hours < 12) timeSplitted[0] = hours + 12;
+  if (period === 'AM' && hours > 11) timeSplitted[0] = hours - 12;
+  timeSplitted[0] = timeSplitted[0].toString().padStart(2, '0');
+
+  return timeSplitted.join(':');
 }
