@@ -9,8 +9,9 @@
 export default function miniMaxSum(arr) {
   arr.sort((a, b) => a - b);
   let miniSum = arr.slice(0, 4);
-  miniSum = miniSum.reduce((accumulator, currentValue) => accumulator + currentValue);
   let maxSum = arr.slice(arr.length - 4);
+
+  miniSum = miniSum.reduce((accumulator, currentValue) => accumulator + currentValue);
   maxSum = maxSum.reduce((accumulator, currentValue) => accumulator + currentValue);
 
   console.log(miniSum, maxSum);

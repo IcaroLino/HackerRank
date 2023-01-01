@@ -35,14 +35,14 @@ describe('miniMaxSum Test', () => {
     expect(logSpy).toHaveBeenCalled();
     expect(logSpy).toHaveBeenCalledWith(10, 14);
   });
+});
 
-  describe('timeConversion Test', () => {
-    it('Must return two strings with 24-hour', () => {
-      const amTest = timeConversion('12:01:00AM');
-      const pmTest = timeConversion('07:05:45PM');
+describe('timeConversion Test', () => {
+  it('Must return two strings with 24-hour', () => {
+    const amTest = timeConversion('12:01:00AM');
+    const pmTest = timeConversion('07:05:45PM');
 
-      expect(amTest).toBe('00:01:00');
-      expect(pmTest).toBe('19:05:45');
-    });
+    expect(amTest).toBe('00:01:00');
+    expect(pmTest).toBe('19:05:45');
   });
 });
