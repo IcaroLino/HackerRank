@@ -3,6 +3,7 @@ import {
 } from '@jest/globals';
 import plusMinus from '../src/plusMinus';
 import miniMaxSum from '../src/miniMaxSum';
+import timeConversion from '../src/timeConversion';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -33,5 +34,15 @@ describe('miniMaxSum Test', () => {
 
     expect(logSpy).toHaveBeenCalled();
     expect(logSpy).toHaveBeenCalledWith(10, 14);
+  });
+
+  describe('timeConversion Test', () => {
+    it('Must return two strings with 24-hour', () => {
+      const amTest = timeConversion('12:01:00AM');
+      const pmTest = timeConversion('07:05:45PM');
+
+      expect(amTest).toBe('00:01:00');
+      expect(pmTest).toBe('19:05:45');
+    });
   });
 });
