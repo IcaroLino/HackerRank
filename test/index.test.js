@@ -5,6 +5,7 @@ import plusMinus from '../src/plusMinus';
 import miniMaxSum from '../src/miniMaxSum';
 import timeConversion from '../src/timeConversion';
 import breakingRecords from '../src/breakingRecords';
+import processData from '../src/camelCase4';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -54,5 +55,22 @@ describe('breakingRecords Test', () => {
     const expected = [2, 4];
 
     expect(records).toEqual(expected);
+  });
+});
+
+describe('camelCase 4 Test', () => {
+  it('Must calls 3 console.log', async () => {
+    const logSpy = jest.spyOn(console, 'log');
+
+    processData('S;V;iPad');
+    processData('C;M;mouse pad');
+    processData('C;C;code swarm');
+    processData('S;C;OrangeHighlighter');
+
+    expect(logSpy).toHaveBeenCalled();
+    expect(logSpy).toHaveBeenCalledWith('i pad');
+    expect(logSpy).toHaveBeenCalledWith('mousePad()');
+    expect(logSpy).toHaveBeenCalledWith('CodeSwarm');
+    expect(logSpy).toHaveBeenCalledWith('orange highlighter');
   });
 });
