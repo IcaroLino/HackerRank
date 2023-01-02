@@ -4,6 +4,7 @@ import {
 import plusMinus from '../src/plusMinus';
 import miniMaxSum from '../src/miniMaxSum';
 import timeConversion from '../src/timeConversion';
+import breakingRecords from '../src/breakingRecords';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -44,5 +45,14 @@ describe('timeConversion Test', () => {
 
     expect(amTest).toBe('00:01:00');
     expect(pmTest).toBe('19:05:45');
+  });
+});
+
+describe('breakingRecords Test', () => {
+  it('Must return an array with the max and min number of times the record has been broken', () => {
+    const records = breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]);
+    const expected = [2, 4];
+
+    expect(records).toBe(expected);
   });
 });
