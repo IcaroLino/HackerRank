@@ -53,6 +53,6 @@ describe('breakingRecords Test', () => {
     const records = breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]);
     const expected = [2, 4];
 
-    expect(records).toBe(expected);
+    expect(records).toEqual(expected);
   });
 });
