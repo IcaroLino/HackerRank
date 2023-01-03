@@ -1,4 +1,4 @@
-/*
+/**
  * Write a program that creates or splits Camel Case variable, method, and class names.
  *
  * Each line of the input file will begin with an operation (S or C) followed by a semi-colon
@@ -28,6 +28,7 @@ export default function processData(input) {
     const operation = splittedLine[0];
     const method = splittedLine[1];
     let data = splittedLine[2];
+
     if (operation === 'S') {
       const regex = /[A-Z]/gm;
       data = data.replace(regex, replacer).toLowerCase();

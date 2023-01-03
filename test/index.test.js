@@ -6,6 +6,7 @@ import miniMaxSum from '../src/miniMaxSum';
 import timeConversion from '../src/timeConversion';
 import breakingRecords from '../src/breakingRecords';
 import processData from '../src/camelCase4';
+import divisibleSumPairs from '../src/divisibleSumPairs';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -59,7 +60,7 @@ describe('breakingRecords Test', () => {
 });
 
 describe('camelCase 4 Test', () => {
-  it('Must calls 3 console.log', async () => {
+  it('Must print a specific list of words', async () => {
     const logSpy = jest.spyOn(console, 'log');
 
     processData('S;V;iPad');
@@ -72,5 +73,14 @@ describe('camelCase 4 Test', () => {
     expect(logSpy).toHaveBeenCalledWith('mousePad()');
     expect(logSpy).toHaveBeenCalledWith('CodeSwarm');
     expect(logSpy).toHaveBeenCalledWith('orange highlighter');
+  });
+});
+
+describe('divisibleSumPairs Test', () => {
+  it('Must return the numbers of pair', () => {
+    const sumPairs = divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
+    const expected = 5;
+
+    expect(sumPairs).toBe(expected);
   });
 });

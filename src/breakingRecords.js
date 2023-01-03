@@ -1,4 +1,4 @@
-/*
+/**
  * Given the scores for a season, determine the number of times Maria breaks her records
  * for most and least points.
  * Scores are in the same order as the games played.
