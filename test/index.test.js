@@ -7,6 +7,7 @@ import timeConversion from '../src/timeConversion';
 import breakingRecords from '../src/breakingRecords';
 import processData from '../src/camelCase4';
 import divisibleSumPairs from '../src/divisibleSumPairs';
+import matchingStrings from '../src/sparseArrays';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
@@ -77,10 +78,21 @@ describe('camelCase 4 Test', () => {
 });
 
 describe('divisibleSumPairs Test', () => {
-  it('Must return the numbers of pair', () => {
+  it('Must return the numbers of pairs', () => {
     const sumPairs = divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
     const expected = 5;
 
     expect(sumPairs).toBe(expected);
+  });
+});
+
+describe('sparseArray Test', () => {
+  it('Must return an array of results for each query', () => {
+    const strings = ['aba', 'baba', 'aba', 'xzxb'];
+    const queries = ['aba', 'xzxb', 'ab'];
+    const result = matchingStrings(strings, queries);
+    const expected = [2, 1, 0];
+
+    expect(result).toBe(expected);
   });
 });
