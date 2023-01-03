@@ -10,5 +10,13 @@
  */
 
 export default function divisibleSumPairs(n, k, ar) {
+  let result = 0;
 
+  ar.forEach((element, i) => {
+    for (let j = i + 1; j < n; j += 1) {
+      if ((element + ar[j]) % k === 0) result += 1;
+    }
+  });
+
+  return result;
 }
