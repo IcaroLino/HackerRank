@@ -10,5 +10,5 @@
  */
 
 export default function matchingStrings(strings, queries) {
-
+  return queries.map((query) => strings.filter((string) => string === query).length);
 }
