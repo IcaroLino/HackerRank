@@ -8,5 +8,14 @@
  */
 
 export default function pangrams(s) {
+  const regex = /[(a-z)]/gm;
+  const repeatableIndex = [];
+  const letters = [...s.toLowerCase().match(regex)];
 
+  letters.sort().forEach((letter, index) => {
+    if (letter === letters[index + 1]) repeatableIndex.push(index + 1);
+  });
+  repeatableIndex.reverse().forEach((value) => letters.splice(value, 1));
+
+  return letters.join('') === 'abcdefghijklmnopqrstuvwxyz' ? 'pangram' : 'not pangram';
 }
