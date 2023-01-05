@@ -1,13 +1,13 @@
 import {
   describe, expect, it, jest,
 } from '@jest/globals';
-import plusMinus from '../src/plusMinus';
-import miniMaxSum from '../src/miniMaxSum';
-import timeConversion from '../src/timeConversion';
-import breakingRecords from '../src/breakingRecords';
-import processData from '../src/camelCase4';
-import divisibleSumPairs from '../src/divisibleSumPairs';
-import matchingStrings from '../src/sparseArrays';
+import plusMinus from '../src/week1/plusMinus';
+import miniMaxSum from '../src/week1/miniMaxSum';
+import timeConversion from '../src/week1/timeConversion';
+import breakingRecords from '../src/week1/breakingRecords';
+import processData from '../src/week1/camelCase4';
+import divisibleSumPairs from '../src/week1/divisibleSumPairs';
+import matchingStrings from '../src/week1/sparseArrays';
 
 describe('plusMinus Test', () => {
   it('Must calls 3 console.log', () => {
