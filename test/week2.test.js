@@ -3,6 +3,7 @@ import {
 } from '@jest/globals';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
+import pangramsWR from '../src/week2/pangramsWithoutRegex';
 
 describe('countingValleys Test', () => {
   it('Must return the amount of valleys', () => {
@@ -23,6 +24,22 @@ describe('pangrams Test', () => {
 
   it('Must return not pangram', () => {
     const returnedValue = pangrams('We promptly judged antique ivory buckles for the prize');
+    const expectedValue = 'not pangram';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('[Extra] pangramsWithoutRegex Test', () => {
+  it('Must return pangram', () => {
+    const returnedValue = pangramsWR('We promptly judged antique ivory buckles for the next prize');
+    const expectedValue = 'pangram';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Must return not pangram', () => {
+    const returnedValue = pangramsWR('We promptly judged antique ivory buckles for the prize');
     const expectedValue = 'not pangram';
 
     expect(returnedValue).toBe(expectedValue);
