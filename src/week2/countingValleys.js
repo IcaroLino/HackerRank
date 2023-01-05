@@ -16,5 +16,20 @@
  */
 
 export default function countingValleys(steps, path) {
-  return valleys;
+  let altitude = 0;
+  let counter = 0;
+  let valleyCount = 0;
+
+  path.split('').forEach((letter) => {
+    if (letter === 'U') altitude += 1;
+    else altitude -= 1;
+
+    if (altitude === 0) counter = 0;
+    else if (altitude < 0 && counter === 0) {
+      valleyCount += 1;
+      counter = 1;
+    }
+  });
+
+  return valleyCount;
 }
