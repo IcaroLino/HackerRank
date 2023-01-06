@@ -4,6 +4,7 @@ import {
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
+import marsExploration from '../src/week2/marsExporation';
 
 describe('countingValleys Test', () => {
   it('Must return the amount of valleys', () => {
@@ -41,6 +42,15 @@ describe('[Extra] pangramsWithoutRegex Test', () => {
   it('Must return not pangram', () => {
     const returnedValue = pangramsWR('We promptly judged antique ivory buckles for the prize');
     const expectedValue = 'not pangram';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('marsExploration Test', () => {
+  it('Must return the amount of changed letters', () => {
+    const returnedValue = marsExploration('SOSSPSSQSSOR');
+    const expectedValue = 3;
 
     expect(returnedValue).toBe(expectedValue);
   });
