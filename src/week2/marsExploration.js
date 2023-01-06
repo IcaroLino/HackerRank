@@ -8,5 +8,12 @@
  */
 
 export default function marsExploration(s) {
+  let count = 0;
 
+  s.split('').forEach((letter, index) => {
+    if (letter !== 'S' && index % 3 !== 1) count += 1;
+    if (letter !== 'O' && index % 3 === 1) count += 1;
+  });
+
+  return count;
 }
