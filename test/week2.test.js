@@ -1,7 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
-import lonelyinteger from '../src/week2/lonelyInteger';
+import lonelyInteger from '../src/week2/lonelyInteger';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
@@ -9,7 +9,7 @@ import marsExploration from '../src/week2/marsExploration';
 
 describe('lonelyInteger Test', () => {
   it('Must return unique element', () => {
-    const returnedValue = lonelyinteger([1, 2, 3, 4, 3, 2, 1]);
+    const returnedValue = lonelyInteger([1, 2, 3, 4, 3, 2, 1]);
     const expectedValue = 4;
 
     expect(...returnedValue).toBe(expectedValue);

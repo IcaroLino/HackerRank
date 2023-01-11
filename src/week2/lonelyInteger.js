@@ -5,7 +5,7 @@
  * The function accepts INTEGER_ARRAY a as parameter.
  */
 
-export default function lonelyinteger(a) {
+export default function lonelyInteger(a) {
   while (a.length > 1) {
     const result = a.shift();
 
