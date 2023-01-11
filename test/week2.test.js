@@ -3,6 +3,7 @@ import {
 } from '@jest/globals';
 import lonelyInteger from '../src/week2/lonelyInteger';
 import gradingStudents from '../src/week2/gradingStudents';
+import flippingBits from '../src/week2/flippingBits';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
@@ -24,6 +25,15 @@ describe('gradingStudents Test', () => {
     const expectedValue = [75, 67, 40, 33];
 
     expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('flippingBits Test', () => {
+  it('Must return a unsigned flipped integer', () => {
+    const returnedValue = flippingBits(2147483647);
+    const expectedValue = 2147483648;
+
+    expect(returnedValue).toBe(expectedValue);
   });
 });
 
