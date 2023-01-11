@@ -68,12 +68,15 @@ describe('camelCase 4 Test', () => {
     processData('C;M;mouse pad');
     processData('C;C;code swarm');
     processData('S;C;OrangeHighlighter');
+    processData('C;V;mobile phone');
+    processData('X;X;test coverage');
 
     expect(logSpy).toHaveBeenCalled();
     expect(logSpy).toHaveBeenCalledWith('i pad');
     expect(logSpy).toHaveBeenCalledWith('mousePad()');
     expect(logSpy).toHaveBeenCalledWith('CodeSwarm');
     expect(logSpy).toHaveBeenCalledWith('orange highlighter');
+    expect(logSpy).toHaveBeenCalledWith('mobilePhone');
   });
 });
 
