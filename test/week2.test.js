@@ -7,6 +7,7 @@ import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
 import marsExploration from '../src/week2/marsExploration';
+import flippingMatrix from '../src/week2/flippingMatrix';
 
 describe('lonelyInteger Test', () => {
   it('Must return unique element', () => {
@@ -71,6 +72,16 @@ describe('marsExploration Test', () => {
   it('Must return the amount of changed letters', () => {
     const returnedValue = marsExploration('SOSTPSSQSSOR');
     const expectedValue = 4;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('Mock Test', () => {
+  it('Must return the max sum possible for upper-left quadrant of the matrix', () => {
+    const matrix = [[112, 42, 83, 119], [56, 125, 56, 49], [15, 78, 101, 43], [62, 98, 114, 108]];
+    const returnedValue = flippingMatrix(matrix);
+    const expectedValue = 414;
 
     expect(returnedValue).toBe(expectedValue);
   });
