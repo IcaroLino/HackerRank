@@ -12,7 +12,7 @@ describe('lonelyInteger Test', () => {
     const returnedValue = lonelyinteger([1, 2, 3, 4, 3, 2, 1]);
     const expectedValue = 4;
 
-    expect(returnedValue).toBe(expectedValue);
+    expect(...returnedValue).toBe(expectedValue);
   });
 });
 

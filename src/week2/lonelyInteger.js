@@ -6,5 +6,15 @@
  */
 
 export default function lonelyinteger(a) {
+  while (a.length > 1) {
+    const result = a.shift();
 
+    if (a.includes(result)) a.splice(a.indexOf(result), 1);
+    else {
+      a.splice(0, a.length);
+      a.push(result);
+    }
+  }
+
+  return a;
 }
