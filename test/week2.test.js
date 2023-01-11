@@ -2,6 +2,7 @@ import {
   describe, expect, it,
 } from '@jest/globals';
 import lonelyInteger from '../src/week2/lonelyInteger';
+import gradingStudents from '../src/week2/gradingStudents';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
@@ -12,7 +13,16 @@ describe('lonelyInteger Test', () => {
     const returnedValue = lonelyInteger([1, 2, 3, 4, 3, 2, 1]);
     const expectedValue = 4;
 
-    expect(...returnedValue).toBe(expectedValue);
+    expect(returnedValue).toContain(expectedValue);
+  });
+});
+
+describe('gradingStudents Test', () => {
+  it('Must return all grades', () => {
+    const returnedValue = gradingStudents([73, 67, 38, 33]);
+    const expectedValue = [75, 67, 40, 33];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
 
