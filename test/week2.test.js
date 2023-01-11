@@ -10,7 +10,7 @@ import marsExploration from '../src/week2/marsExploration';
 
 describe('lonelyInteger Test', () => {
   it('Must return unique element', () => {
-    const returnedValue = lonelyInteger([1, 2, 3, 4, 3, 2, 1]);
+    const returnedValue = lonelyInteger([1, 4, 3, 2, 3, 2, 1]);
     const expectedValue = 4;
 
     expect(returnedValue).toContain(expectedValue);

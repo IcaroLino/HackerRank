@@ -93,6 +93,6 @@ describe('sparseArray Test', () => {
     const result = matchingStrings(strings, queries);
     const expected = [2, 1, 0];
 
-    expect(result).toEqual(expect.arrayContaining(expected));
+    expect(result).toEqual(expected);
   });
 });
