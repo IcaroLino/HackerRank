@@ -6,5 +6,7 @@
  */
 
 export default function flippingBits(n) {
-
+  const binary = n.toString(2).padStart(32, '0');
+  const complement = binary.split('').map((bit) => (bit === '0' ? '1' : '0')).join('');
+  return parseInt(complement, 2);
 }
