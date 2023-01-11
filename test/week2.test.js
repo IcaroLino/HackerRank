@@ -4,6 +4,7 @@ import {
 import lonelyInteger from '../src/week2/lonelyInteger';
 import gradingStudents from '../src/week2/gradingStudents';
 import flippingBits from '../src/week2/flippingBits';
+import diagonalDifference from '../src/week2/diagonalDifference';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
 import pangramsWR from '../src/week2/pangramsWithoutRegex';
@@ -32,6 +33,15 @@ describe('flippingBits Test', () => {
   it('Must return a unsigned flipped integer', () => {
     const returnedValue = flippingBits(2147483647);
     const expectedValue = 2147483648;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('diagonalDifference Test', () => {
+  it('Must return the absolute diagonal difference', () => {
+    const returnedValue = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
+    const expectedValue = 15;
 
     expect(returnedValue).toBe(expectedValue);
   });
