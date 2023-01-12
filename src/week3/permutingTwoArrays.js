@@ -10,5 +10,12 @@
  */
 
 export default function twoArrays(k, A, B) {
+  A.sort((a, b) => a - b);
+  B.sort((a, b) => b - a);
 
+  for (let index = 0; index < A.length; index += 1) {
+    if (A[index] + B[index] < k) return 'NO';
+  }
+
+  return 'YES';
 }
