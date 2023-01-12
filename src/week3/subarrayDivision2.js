@@ -13,5 +13,12 @@
  */
 
 export default function birthday(s, d, m) {
+  let count = 0;
 
+  s.forEach((_, index) => {
+    const segment = s.slice(index, index + m);
+    if (segment.reduce((acc, cur) => acc + cur, 0) === d) count += 1;
+  });
+
+  return count;
 }
