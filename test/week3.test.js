@@ -1,6 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import migratoryBirds from '../src/week3/migratoryBirds';
 import twoArrays from '../src/week3/permutingTwoArrays';
 import sockMerchant from '../src/week3/salesByMatch';
 import birthday from '../src/week3/subarrayDivision2';
@@ -33,6 +34,15 @@ describe('subarrayDivision 2 Test', () => {
 describe('salesByMatch Test', () => {
   it('Must return the numbers of pairs', () => {
     const returnedValue = sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+    const expectedValue = 3;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('migratoryBirds Test', () => {
+  it('Must return the lowest type id of the most frequently', () => {
+    const returnedValue = migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]);
     const expectedValue = 3;
 
     expect(returnedValue).toBe(expectedValue);
