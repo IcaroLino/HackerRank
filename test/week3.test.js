@@ -2,6 +2,7 @@ import {
   describe, expect, it,
 } from '@jest/globals';
 import twoArrays from '../src/week3/permutingTwoArrays';
+import sockMerchant from '../src/week3/salesByMatch';
 import birthday from '../src/week3/subarrayDivision2';
 
 describe('permutingTwoArrays Test', () => {
@@ -24,6 +25,15 @@ describe('subarrayDivision 2 Test', () => {
   it('Must return the numbers of ways the bar can be divided', () => {
     const returnedValue = birthday([1, 2, 1, 3, 2], 3, 2);
     const expectedValue = 2;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('salesByMatch Test', () => {
+  it('Must return the numbers of pairs', () => {
+    const returnedValue = sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+    const expectedValue = 3;
 
     expect(returnedValue).toBe(expectedValue);
   });
