@@ -1,4 +1,4 @@
-/*
+/**
  * Given an array of bird sightings where every element represents a bird type id,
  * determine the id of the most frequently sighted type.
  * If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
@@ -10,7 +10,7 @@
 export default function migratoryBirds(arr) {
   let result = 0;
   let count = 0;
-  let total = 0;
+  let maxValue = 0;
 
   arr.sort((a, b) => a - b);
   let birdType = arr[0];
@@ -18,9 +18,9 @@ export default function migratoryBirds(arr) {
   arr.forEach((bird) => {
     if (bird === birdType) {
       count += 1;
-      if (count > total) {
+      if (count > maxValue) {
         result = bird;
-        total = count;
+        maxValue = count;
       }
     } else {
       birdType = bird;
