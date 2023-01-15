@@ -1,10 +1,11 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import maximumPerimeterTriangle from '../src/week3/maximumPerimeterTriangle';
 import migratoryBirds from '../src/week3/migratoryBirds';
-import twoArrays from '../src/week3/permutingTwoArrays';
 import sockMerchant from '../src/week3/salesByMatch';
 import birthday from '../src/week3/subarrayDivision2';
+import twoArrays from '../src/week3/permutingTwoArrays';
 
 describe('permutingTwoArrays Test', () => {
   it('Must return YES', () => {
@@ -46,5 +47,21 @@ describe('migratoryBirds Test', () => {
     const expectedValue = 3;
 
     expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('maximumPerimeterTriangle Test', () => {
+  it('Must return the side lengths of the chosen triangle in non-decreasing order', () => {
+    const returnedValue = maximumPerimeterTriangle([1, 1, 1, 3, 3]);
+    const expectedValue = [1, 3, 3];
+
+    expect(returnedValue).toEqual(expectedValue);
+  });
+
+  it('Must return -1', () => {
+    const returnedValue = maximumPerimeterTriangle([1, 2, 3]);
+    const expectedValue = [-1];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
