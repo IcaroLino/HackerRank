@@ -11,5 +11,9 @@
  */
 
 export default function pageCount(n, p) {
+  const maxFlips = Math.floor(n / 2);
+  const forwardFlips = Math.floor(p / 2);
+  const backwardsFlips = maxFlips - forwardFlips;
 
+  return backwardsFlips < forwardFlips ? backwardsFlips : forwardFlips;
 }
