@@ -7,6 +7,7 @@ import sockMerchant from '../src/week3/salesByMatch';
 import birthday from '../src/week3/subarrayDivision2';
 import twoArrays from '../src/week3/permutingTwoArrays';
 import pageCount from '../src/week3/drawingBook.';
+import getTotalX from '../src/week3/betweenTwoSets';
 
 describe('permutingTwoArrays Test', () => {
   it('Must return YES', () => {
@@ -78,6 +79,15 @@ describe('drawingBook Test', () => {
   it('Must return the minimum number of pages to turn - Test case 1', () => {
     const returnedValue = pageCount(6, 2);
     const expectedValue = 1;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('Mock Test', () => {
+  it('Must return the total', () => {
+    const returnedValue = getTotalX([2, 4], [16, 32, 96]);
+    const expectedValue = 3;
 
     expect(returnedValue).toBe(expectedValue);
   });
