@@ -6,6 +6,7 @@ import migratoryBirds from '../src/week3/migratoryBirds';
 import sockMerchant from '../src/week3/salesByMatch';
 import birthday from '../src/week3/subarrayDivision2';
 import twoArrays from '../src/week3/permutingTwoArrays';
+import pageCount from '../src/week3/drawingBook.';
 
 describe('permutingTwoArrays Test', () => {
   it('Must return YES', () => {
@@ -63,5 +64,21 @@ describe('maximumPerimeterTriangle Test', () => {
     const expectedValue = [-1];
 
     expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('drawingBook Test', () => {
+  it('Must return the minimum number of pages to turn - Test case 0', () => {
+    const returnedValue = pageCount(5, 4);
+    const expectedValue = 0;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Must return the minimum number of pages to turn - Test case 1', () => {
+    const returnedValue = pageCount(6, 2);
+    const expectedValue = 1;
+
+    expect(returnedValue).toBe(expectedValue);
   });
 });
