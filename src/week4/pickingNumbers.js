@@ -7,5 +7,16 @@
  */
 
 export default function pickingNumbers(a) {
+  const uniqueNumbers = Array.from(new Set(a));
+  let longestSubArr = [];
 
+  uniqueNumbers.forEach((uniqueNumber) => {
+    const tempArr = [];
+    a.forEach((element) => {
+      if (uniqueNumber === element || uniqueNumber + 1 === element) tempArr.push(element);
+    });
+    if (tempArr.length > longestSubArr.length) longestSubArr = tempArr;
+  });
+
+  return longestSubArr.length;
 }
