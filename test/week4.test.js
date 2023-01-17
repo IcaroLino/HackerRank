@@ -18,6 +18,6 @@ describe('leftRotation Test', () => {
     const returnedValue = rotateLeft(4, [1, 2, 3, 4, 5]);
     const expectedValue = [5, 1, 2, 3, 4];
 
-    expect(returnedValue).toBe(expectedValue);
+    expect(returnedValue).toEqual(expectedValue);
   });
 });

@@ -10,5 +10,8 @@
  */
 
 export default function rotateLeft(d, arr) {
-
+  return arr.map((element, index) => {
+    if (index + d >= arr.length) return arr[index + d - arr.length];
+    return arr[index + d];
+  });
 }
