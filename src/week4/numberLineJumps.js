@@ -16,5 +16,33 @@
  */
 
 export default function kangaroo(x1, v1, x2, v2) {
+  let jumps = 0;
 
+  if (x1 > x2 && v1 < v2) {
+    jumps = Math.floor((x1 - x2) / (v2 - v1));
+  } else if (x1 < x2 && v1 > v2) {
+    jumps = Math.floor((x2 - x1) / (v1 - v2));
+  }
+
+  const distance1 = (jumps * v1) + x1;
+  const distance2 = (jumps * v2) + x2;
+
+  if (distance1 === distance2) return 'YES';
+  return 'NO';
 }
+
+/* Alternative Solution
+
+  let k1Location = x1;
+  let k2Location = x2;
+
+  while ((k1Location > k2Location && v1 < v2) || (k1Location < k2Location && v1 > v2)) {
+    k1Location += v1;
+    k2Location += v2;
+    console.log(k1Location, k2Location);
+  }
+
+  if (k1Location === k2Location) return 'YES';
+  return 'NO';
+
+*/

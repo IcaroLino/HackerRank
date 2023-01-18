@@ -32,7 +32,7 @@ describe('numberLineJumps Test', () => {
   });
 
   it('Must return NO', () => {
-    const returnedValue = rotateLeft(0, 2, 5, 3);
+    const returnedValue = kangaroo(0, 2, 5, 3);
     const expectedValue = 'NO';
 
     expect(returnedValue).toBe(expectedValue);
