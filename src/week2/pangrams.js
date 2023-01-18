@@ -8,6 +8,12 @@
  */
 
 export default function pangrams(s) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  return alphabet.split('').reduce((result, letter) => (s.toLowerCase().includes(letter) ? result : 'not pangram'), 'pangram');
+}
+
+/* Alternative Solution (with regex)
+
   const regex = /[(a-z)]/gm;
   const repeatableIndex = [];
   const letters = [...s.toLowerCase().match(regex)];
@@ -18,4 +24,5 @@ export default function pangrams(s) {
   repeatableIndex.reverse().forEach((value) => letters.splice(value, 1));
 
   return letters.join('') === 'abcdefghijklmnopqrstuvwxyz' ? 'pangram' : 'not pangram';
-}
+
+*/
