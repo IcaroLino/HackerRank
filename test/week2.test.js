@@ -8,7 +8,6 @@ import diagonalDifference from '../src/week2/diagonalDifference';
 import countingSort from '../src/week2/countingSort1';
 import countingValleys from '../src/week2/countingValleys';
 import pangrams from '../src/week2/pangrams';
-import pangramsWR from '../src/week2/pangramsWithoutRegex';
 import marsExploration from '../src/week2/marsExploration';
 import flippingMatrix from '../src/week2/flippingMatrix';
 
@@ -101,22 +100,6 @@ describe('pangrams Test', () => {
 
   it('Must return not pangram', () => {
     const returnedValue = pangrams('We promptly judged antique ivory buckles for the prize');
-    const expectedValue = 'not pangram';
-
-    expect(returnedValue).toBe(expectedValue);
-  });
-});
-
-describe('[Extra] pangramsWithoutRegex Test', () => {
-  it('Must return pangram', () => {
-    const returnedValue = pangramsWR('We promptly judged antique ivory buckles for the next prize');
-    const expectedValue = 'pangram';
-
-    expect(returnedValue).toBe(expectedValue);
-  });
-
-  it('Must return not pangram', () => {
-    const returnedValue = pangramsWR('We promptly judged antique ivory buckles for the prize');
     const expectedValue = 'not pangram';
 
     expect(returnedValue).toBe(expectedValue);
