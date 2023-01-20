@@ -9,5 +9,18 @@
  */
 
 export default function closestNumbers(arr) {
+  arr.sort((a, b) => a - b);
 
+  let result = [];
+  let diff = arr[1] - arr[0];
+
+  arr.forEach((element, index) => {
+    const elementDiff = arr[index + 1] - element;
+    if (elementDiff < diff) {
+      diff = elementDiff;
+      result = [element, arr[index + 1]];
+    } else if (elementDiff === diff) result.push(element, arr[index + 1]);
+  });
+
+  return result;
 }
