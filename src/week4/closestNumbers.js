@@ -10,9 +10,8 @@
 
 export default function closestNumbers(arr) {
   arr.sort((a, b) => a - b);
-
-  let result = [];
   let diff = arr[1] - arr[0];
+  let result = [];
 
   arr.forEach((element, index) => {
     const elementDiff = arr[index + 1] - element;
