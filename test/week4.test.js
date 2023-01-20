@@ -1,6 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import closestNumbers from '../src/week4/closestNumbers';
 import rotateLeft from '../src/week4/leftRotation';
 import kangaroo from '../src/week4/numberLineJumps';
 import pickingNumbers from '../src/week4/pickingNumbers';
@@ -36,5 +37,16 @@ describe('numberLineJumps Test', () => {
     const expectedValue = 'NO';
 
     expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('closestNumbers Test', () => {
+  it('Must return an array of integers as described', () => {
+    const arr = [-20, -3916237, -357920, -3620601, 7374819,
+      -7330761, 30, 6246457, -6461594, 266854, -520, -470];
+    const returnedValue = closestNumbers(arr);
+    const expectedValue = [-520, -470, -20, 30];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
