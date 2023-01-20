@@ -39,7 +39,6 @@ export default function kangaroo(x1, v1, x2, v2) {
   while ((k1Location > k2Location && v1 < v2) || (k1Location < k2Location && v1 > v2)) {
     k1Location += v1;
     k2Location += v2;
-    console.log(k1Location, k2Location);
   }
 
   if (k1Location === k2Location) return 'YES';
