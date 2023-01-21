@@ -3,6 +3,7 @@ import {
 } from '@jest/globals';
 import closestNumbers from '../src/week4/closestNumbers';
 import rotateLeft from '../src/week4/leftRotation';
+import minimumAbsoluteDifference from '../src/week4/minimumAbsoluteDifferenceInAnArray.js';
 import kangaroo from '../src/week4/numberLineJumps';
 import pickingNumbers from '../src/week4/pickingNumbers';
 
@@ -55,5 +56,14 @@ describe('closestNumbers Test', () => {
     const expectedValue = [-520, -470, -20, 30];
 
     expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('minimumAbsoluteDifferenceInAnArray.js Test', () => {
+  it('Must return the minimum absolute difference found', () => {
+    const returnedValue = minimumAbsoluteDifference([3, -7, 0]);
+    const expectedValue = 3;
+
+    expect(returnedValue).toBe(expectedValue);
   });
 });
