@@ -10,5 +10,16 @@
  */
 
 export default function caesarCipher(s, k) {
+  const encryptedMessage = s.split('').map((letter) => {
+    const letterCode = letter.charCodeAt(0);
+    if (letterCode >= 65 && letterCode <= 90) {
+      return String.fromCharCode(((letterCode - 65 + k) % 26) + 65);
+    }
+    if (letterCode >= 97 && letterCode <= 122) {
+      return String.fromCharCode(((letterCode - 97 + k) % 26) + 97);
+    }
+    return String.fromCharCode(letterCode);
+  });
 
+  return encryptedMessage.join('');
 }
