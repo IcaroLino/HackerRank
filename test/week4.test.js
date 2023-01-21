@@ -1,9 +1,10 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import caesarCipher from '../src/week4/caesarCipher';
 import closestNumbers from '../src/week4/closestNumbers';
 import rotateLeft from '../src/week4/leftRotation';
-import minimumAbsoluteDifference from '../src/week4/minimumAbsoluteDifferenceInAnArray.js';
+import minimumAbsoluteDifference from '../src/week4/minimumAbsoluteDifferenceInAnArray';
 import kangaroo from '../src/week4/numberLineJumps';
 import pickingNumbers from '../src/week4/pickingNumbers';
 
@@ -59,10 +60,19 @@ describe('closestNumbers Test', () => {
   });
 });
 
-describe('minimumAbsoluteDifferenceInAnArray.js Test', () => {
+describe('minimumAbsoluteDifferenceInAnArray Test', () => {
   it('Must return the minimum absolute difference found', () => {
     const returnedValue = minimumAbsoluteDifference([3, -7, 0]);
     const expectedValue = 3;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('caesarCipher Test', () => {
+  it('Must return the encrypted string', () => {
+    const returnedValue = caesarCipher('middle-Outz', 2);
+    const expectedValue = 'okffng-Qwvb';
 
     expect(returnedValue).toBe(expectedValue);
   });
