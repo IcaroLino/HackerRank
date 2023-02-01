@@ -16,5 +16,12 @@
  */
 
 export default function minimumNumber(n, password) {
+  let changes = 0;
 
+  if (!password.match('.*[a-z].*')) changes += 1;
+  if (!password.match('.*[A-Z].*')) changes += 1;
+  if (!password.match('.*[0-9].*')) changes += 1;
+  if (!password.match('.*[!@#$%^&*()+-].*')) changes += 1;
+
+  return (changes + n) >= 6 ? changes : 6 - n;
 }
