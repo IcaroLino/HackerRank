@@ -9,5 +9,11 @@
  */
 
 export default function missingNumbers(arr, brr) {
+  arr.forEach((number) => {
+    if (brr.includes(number)) brr.splice(brr.indexOf(number), 1);
+  });
 
+  brr.sort((a, b) => a - b);
+
+  return Array.from(new Set(brr));
 }
