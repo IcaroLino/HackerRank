@@ -1,6 +1,7 @@
 import {
   describe, expect, it, jest,
 } from '@jest/globals';
+import dynamicArray from '../src/week5/dynamicArray';
 import gridChallenge from '../src/week5/gridChallenge';
 import maxMin from '../src/week5/maxMin';
 import missingNumbers from '../src/week5/missingNumbers';
@@ -92,5 +93,14 @@ describe('sansaAndXOR Test', () => {
     const expectedValue = 0;
 
     expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('dynamicArray Test', () => {
+  it('Must return the results of each type 2 query in the order they are presented', () => {
+    const returnedValue = dynamicArray(2, [[1, 0, 5], [1, 1, 7], [1, 0, 3], [2, 1, 0], [2, 1, 1]]);
+    const expectedValue = [7, 3];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
