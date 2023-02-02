@@ -64,7 +64,7 @@ describe('theFullCountingSort Test', () => {
 
 describe('gridChallenge Test', () => {
   it('Must return YES', () => {
-    const returnedValue = gridChallenge(['abc', 'lmp', 'qrt']);
+    const returnedValue = gridChallenge(['eabcd', 'fghij', 'olkmn', 'trpqs', 'xywuv']);
     const expectedValue = 'YES';
 
     expect(returnedValue).toEqual(expectedValue);
