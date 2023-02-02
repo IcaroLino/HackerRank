@@ -1,9 +1,10 @@
 import {
-  describe, expect, it,
+  describe, expect, it, jest,
 } from '@jest/globals';
 import maxMin from '../src/week5/maxMin';
 import missingNumbers from '../src/week5/missingNumbers';
 import minimumNumber from '../src/week5/strongPassword';
+import countSort from '../src/week5/theFullCountingSort';
 
 describe('maxMin Test', () => {
   it('Must return the minimum possible unfairness', () => {
@@ -31,5 +32,24 @@ describe('missingNumbers Test', () => {
     const expectedValue = [204, 205, 206];
 
     expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('theFullCountingSort Test', () => {
+  it('Print the finished array with each element separated by a single space', () => {
+    const logSpy = jest.spyOn(console, 'log');
+    const expectedValue = '- - f e b c - a - -';
+    const matrix = [
+      ['1', 'e'], ['2', 'a'],
+      ['1', 'b'], ['3', 'a'],
+      ['4', 'f'], ['1', 'f'],
+      ['2', 'a'], ['1', 'e'],
+      ['1', 'b'], ['1', 'c'],
+    ];
+
+    countSort(matrix);
+
+    expect(logSpy).toHaveBeenCalled();
+    expect(logSpy).toHaveBeenCalledWith(expectedValue);
   });
 });
