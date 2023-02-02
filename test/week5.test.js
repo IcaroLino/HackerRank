@@ -68,22 +68,29 @@ describe('gridChallenge Test', () => {
     const returnedValue = gridChallenge(['eabcd', 'fghij', 'olkmn', 'trpqs', 'xywuv']);
     const expectedValue = 'YES';
 
-    expect(returnedValue).toEqual(expectedValue);
+    expect(returnedValue).toBe(expectedValue);
   });
 
   it('Must return NO', () => {
     const returnedValue = gridChallenge(['mpxz', 'abcd', 'wlmf']);
     const expectedValue = 'NO';
 
-    expect(returnedValue).toEqual(expectedValue);
+    expect(returnedValue).toBe(expectedValue);
   });
 });
 
 describe('sansaAndXOR Test', () => {
-  it('Must return YES', () => {
+  it('Test Case 1 - Must return the result of calculations', () => {
     const returnedValue = sansaXor([98, 74, 12]);
     const expectedValue = 110;
 
-    expect(returnedValue).toEqual(expectedValue);
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Test Case 2 - Must return the result of calculations', () => {
+    const returnedValue = sansaXor([4, 5, 7, 5]);
+    const expectedValue = 0;
+
+    expect(returnedValue).toBe(expectedValue);
   });
 });
