@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 /**
  * Declare a 2-dimensional array, arr, of n empty arrays. All arrays are zero indexed.
  * Declare an integer, lastAnswer, and initialize it to 0.
@@ -19,5 +20,18 @@
  */
 
 export default function dynamicArray(n, queries) {
+  const arr = [...new Array(n)].map(() => []);
+  const answer = [];
+  let lastAnswer = 0;
 
+  queries.forEach((query) => {
+    const idx = ((query[1] ^ lastAnswer) % n);
+    if (query[0] === 1) arr[idx].push(query[2]);
+    else if (query[0] === 2) {
+      lastAnswer = arr[idx][query[2] % arr[idx].length];
+      answer.push(lastAnswer);
+    }
+  });
+
+  return answer;
 }
