@@ -13,5 +13,14 @@
  */
 
 export default function countSort(arr) {
+  const frequencyArr = Array(arr.length).fill().map(() => Array(0));
 
+  for (let index = 0; index < arr.length; index += 1) {
+    if (index < arr.length / 2) frequencyArr[parseInt(arr[index][0], 10)].push('-');
+    else frequencyArr[parseInt(arr[index][0], 10)].push(arr[index][1]);
+  }
+
+  const result = frequencyArr.filter((e) => e.length).join(' ').replaceAll(',', ' ');
+
+  console.log(result);
 }
