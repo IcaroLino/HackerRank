@@ -4,6 +4,7 @@ import {
 import gridChallenge from '../src/week5/gridChallenge';
 import maxMin from '../src/week5/maxMin';
 import missingNumbers from '../src/week5/missingNumbers';
+import sansaXor from '../src/week5/sansaAndXOR';
 import minimumNumber from '../src/week5/strongPassword';
 import countSort from '../src/week5/theFullCountingSort';
 
@@ -73,6 +74,15 @@ describe('gridChallenge Test', () => {
   it('Must return NO', () => {
     const returnedValue = gridChallenge(['mpxz', 'abcd', 'wlmf']);
     const expectedValue = 'NO';
+
+    expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('sansaAndXOR Test', () => {
+  it('Must return YES', () => {
+    const returnedValue = sansaXor([98, 74, 12]);
+    const expectedValue = 110;
 
     expect(returnedValue).toEqual(expectedValue);
   });
