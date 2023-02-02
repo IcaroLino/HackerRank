@@ -1,6 +1,7 @@
 import {
   describe, expect, it, jest,
 } from '@jest/globals';
+import gridChallenge from '../src/week5/gridChallenge';
 import maxMin from '../src/week5/maxMin';
 import missingNumbers from '../src/week5/missingNumbers';
 import minimumNumber from '../src/week5/strongPassword';
@@ -58,5 +59,21 @@ describe('theFullCountingSort Test', () => {
 
     expect(logSpy).toHaveBeenCalled();
     expect(logSpy).toHaveBeenCalledWith(expectedValue);
+  });
+});
+
+describe('gridChallenge Test', () => {
+  it('Must return YES', () => {
+    const returnedValue = gridChallenge(['abc', 'lmp', 'qrt']);
+    const expectedValue = 'YES';
+
+    expect(returnedValue).toEqual(expectedValue);
+  });
+
+  it('Must return NO', () => {
+    const returnedValue = gridChallenge(['mpxz', 'abcd', 'wlmf']);
+    const expectedValue = 'NO';
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
