@@ -16,9 +16,16 @@ describe('maxMin Test', () => {
 });
 
 describe('strongPassword Test', () => {
-  it('Must return the minimum number of characters to add', () => {
-    const returnedValue = minimumNumber(3, 'Ab1');
+  it('Test Case 1 - Must return the minimum number of characters to add', () => {
+    const returnedValue = minimumNumber(3, 'ab1');
     const expectedValue = 3;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Test Case 2 - Must return the minimum number of characters to add', () => {
+    const returnedValue = minimumNumber(4, 'R$U$');
+    const expectedValue = 2;
 
     expect(returnedValue).toBe(expectedValue);
   });
