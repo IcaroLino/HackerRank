@@ -1,4 +1,4 @@
-/*
+/**
  * The website considers a password to be strong if it satisfies the following criteria:
  *
  * Its length is at least .
