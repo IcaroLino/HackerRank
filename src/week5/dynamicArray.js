@@ -27,10 +27,7 @@ export default function dynamicArray(n, queries) {
   queries.forEach((query) => {
     const idx = ((query[1] ^ lastAnswer) % n);
     if (query[0] === 1) arr[idx].push(query[2]);
-    else if (query[0] === 2) {
-      lastAnswer = arr[idx][query[2] % arr[idx].length];
-      answer.push(lastAnswer);
-    }
+    else answer.push(lastAnswer = arr[idx][query[2] % arr[idx].length]);
   });
 
   return answer;
