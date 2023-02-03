@@ -7,6 +7,8 @@ import rotateLeft from '../src/week4/leftRotation';
 import minimumAbsoluteDifference from '../src/week4/minimumAbsoluteDifferenceInAnArray';
 import kangaroo from '../src/week4/numberLineJumps';
 import pickingNumbers from '../src/week4/pickingNumbers';
+import separateNumbers from '../src/week4/separateTheNumbers';
+import towerBreakers from '../src/week4/towerBreakers';
 
 describe('pickingNumbers Test', () => {
   it('Must return the length of the longest subarray that meets the criterion', () => {
@@ -75,5 +77,36 @@ describe('caesarCipher Test', () => {
     const expectedValue = 'okffng-Qwvb';
 
     expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('towerBreakers Test', () => {
+  it('Test Case 1 - Must return the winner of the game', () => {
+    const returnedValue = towerBreakers(2, 2);
+    const expectedValue = 2;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Test Case 2 - Must return the winner of the game', () => {
+    const returnedValue = towerBreakers(1, 4);
+    const expectedValue = 1;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('separateTheNumbers Test', () => {
+  it('Must return YES or NO', () => {
+    const testCases = ['1234', '91011', '99100', '101103', '010203', '13', '1'];
+    const returnedValue = [];
+
+    testCases.forEach((stringTest) => {
+      returnedValue.push(separateNumbers(stringTest));
+    });
+
+    const expectedValue = ['YES 1', 'YES 9', 'YES 99', 'NO', 'NO', 'NO', 'NO'];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
