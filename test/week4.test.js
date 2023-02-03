@@ -7,6 +7,7 @@ import rotateLeft from '../src/week4/leftRotation';
 import minimumAbsoluteDifference from '../src/week4/minimumAbsoluteDifferenceInAnArray';
 import kangaroo from '../src/week4/numberLineJumps';
 import pickingNumbers from '../src/week4/pickingNumbers';
+import separateNumbers from '../src/week4/separateTheNumbers';
 import towerBreakers from '../src/week4/towerBreakers';
 
 describe('pickingNumbers Test', () => {
@@ -92,5 +93,20 @@ describe('towerBreakers Test', () => {
     const expectedValue = 1;
 
     expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('separateTheNumbers Test', () => {
+  it('Must return YES or NO', () => {
+    const testCases = ['1234', '91011', '99100', '101103', '010203', '13', '1'];
+    const returnedValue = [];
+
+    testCases.forEach((stringTest) => {
+      returnedValue.push(separateNumbers(stringTest));
+    });
+
+    const expectedValue = ['YES 1', 'YES 9', 'YES 99', 'NO', 'NO', 'NO', 'NO'];
+
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
