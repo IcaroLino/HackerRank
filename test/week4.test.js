@@ -1,6 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import anagram from '../src/week4/anagram';
 import caesarCipher from '../src/week4/caesarCipher';
 import closestNumbers from '../src/week4/closestNumbers';
 import rotateLeft from '../src/week4/leftRotation';
@@ -107,6 +108,20 @@ describe('separateTheNumbers Test', () => {
 
     const expectedValue = ['YES 1', 'YES 9', 'YES 99', 'NO', 'NO', 'NO', 'NO'];
 
+    expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('Mock Test', () => {
+  it('Must return the minimum number of characters to change or -1', () => {
+    const testCases = ['aaabbb', 'ab', 'abc', 'mnop', 'xyyx', 'xaxbbbxx', 'fdhlvosfpafhalll'];
+    const returnedValue = [];
+
+    testCases.forEach((stringTest) => {
+      returnedValue.push(anagram(stringTest));
+    });
+
+    const expectedValue = [3, 1, -1, 2, 0, 1, 5];
     expect(returnedValue).toEqual(expectedValue);
   });
 });
