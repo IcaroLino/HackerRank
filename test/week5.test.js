@@ -2,6 +2,7 @@ import {
   describe, expect, it, jest,
 } from '@jest/globals';
 import dynamicArray from '../src/week5/dynamicArray';
+import fibonacciModified from '../src/week5/fibonacciModified';
 import gridChallenge from '../src/week5/gridChallenge';
 import maxMin from '../src/week5/maxMin';
 import missingNumbers from '../src/week5/missingNumbers';
@@ -102,5 +103,14 @@ describe('dynamicArray Test', () => {
     const expectedValue = [7, 3];
 
     expect(returnedValue).toEqual(expectedValue);
+  });
+});
+
+describe('Mock Test', () => {
+  it('Must return the n(th) number in the sequence', () => {
+    const returnedValue = fibonacciModified(0, 1, 10);
+    const expectedValue = 84266613096281243382112n;
+
+    expect(returnedValue).toBe(expectedValue);
   });
 });
