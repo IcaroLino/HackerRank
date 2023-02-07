@@ -14,5 +14,7 @@
  */
 
 export default function superDigit(n, k) {
-
+  const result = k * (n.toString().split('').map(Number).reduce((acc, cur) => acc + cur, 0));
+  if (result > 10) return superDigit(result, 1);
+  return result;
 }
