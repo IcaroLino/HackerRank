@@ -15,5 +15,15 @@
  */
 
 export default function gamingArray(arr) {
+  let biggest = arr[0];
+  const result = [biggest];
 
+  arr.forEach((number) => {
+    if (number > biggest) {
+      biggest = number;
+      result.push(number);
+    }
+  });
+
+  return result.length % 2 === 0 ? 'ANDY' : 'BOB';
 }
