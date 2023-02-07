@@ -1,6 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import gamingArray from '../src/week6/gamingArray1';
 import balancedSums from '../src/week6/sherlockAndArray';
 
 describe('sherlockAndArray Test', () => {
@@ -14,6 +15,22 @@ describe('sherlockAndArray Test', () => {
   it('Must return YES', () => {
     const returnedValue = balancedSums([1, 2, 3, 3]);
     const expectedValue = 'YES';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('gamingArray1 Test', () => {
+  it('Must return ANDY', () => {
+    const returnedValue = gamingArray([5, 2, 6, 3, 4]);
+    const expectedValue = 'ANDY';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Must return BOB', () => {
+    const returnedValue = gamingArray([3, 1]);
+    const expectedValue = 'BOB';
 
     expect(returnedValue).toBe(expectedValue);
   });
