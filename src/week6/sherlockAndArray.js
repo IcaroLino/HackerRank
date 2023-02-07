@@ -9,5 +9,14 @@
  */
 
 export default function balancedSums(arr) {
+  let rightSum = arr.reduce((acc, cur) => acc + cur);
+  let leftSum = 0;
 
+  for (let i = 0; i < arr.length; i += 1) {
+    rightSum -= arr[i];
+    if (leftSum === rightSum) return 'YES';
+    leftSum += arr[i];
+  }
+
+  return 'NO';
 }
