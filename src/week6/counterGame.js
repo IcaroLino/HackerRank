@@ -10,5 +10,16 @@
  */
 
 export default function counterGame(n) {
+  let rounds = 0;
+  let newNumber = n;
+  let turns = Math.floor(Math.log2(newNumber));
 
+  while (2 ** turns !== newNumber) {
+    newNumber -= 2 ** turns;
+    rounds += 1;
+    turns = Math.floor(Math.log2(newNumber));
+  }
+
+  rounds += turns;
+  return rounds % 2 === 0 ? 'Richard' : 'Louise';
 }
