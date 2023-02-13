@@ -65,9 +65,16 @@ describe('counterGame Test', () => {
 });
 
 describe('sumVsXor Test', () => {
-  it('Must return Richard', () => {
+  it('Test Case 2 - Must return the number of values found', () => {
     const returnedValue = sumXor(10);
     const expectedValue = 4;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+
+  it('Test Case 2 - Must return the number of values found', () => {
+    const returnedValue = sumXor(0);
+    const expectedValue = 1;
 
     expect(returnedValue).toBe(expectedValue);
   });
