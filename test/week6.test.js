@@ -5,6 +5,7 @@ import counterGame from '../src/week6/counterGame';
 import gamingArray from '../src/week6/gamingArray1';
 import superDigit from '../src/week6/recursiveDigitSum';
 import balancedSums from '../src/week6/sherlockAndArray';
+import sumXor from '../src/week6/sumVsXOR';
 
 describe('sherlockAndArray Test', () => {
   it('Must return NO', () => {
@@ -58,6 +59,15 @@ describe('counterGame Test', () => {
   it('Must return Louise', () => {
     const returnedValue = counterGame(132);
     const expectedValue = 'Louise';
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('sumVsXor Test', () => {
+  it('Must return Richard', () => {
+    const returnedValue = sumXor(10);
+    const expectedValue = 4;
 
     expect(returnedValue).toBe(expectedValue);
   });
