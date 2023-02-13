@@ -10,5 +10,8 @@
  */
 
 export default function sumXor(n) {
+  if (n === 0) return 1;
+  const zeros = n.toString(2).split('').filter((bit) => bit === '0');
 
+  return 2 ** zeros.length;
 }
