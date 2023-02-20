@@ -17,17 +17,17 @@ export default function formingMagicSquare(s) {
     [[2, 9, 4], [7, 5, 3], [6, 1, 8]],
   ];
 
-  let max = Number.MAX_VALUE;
+  let minCost = Number.MAX_VALUE;
 
   possibleSquares.forEach((square) => {
-    let min = 0;
+    let cost = 0;
     square.forEach((line, i) => {
       line.forEach((element, j) => {
-        min += Math.abs(element - s[i][j]);
+        cost += Math.abs(element - s[i][j]);
       });
     });
-    if (max > min) max = min;
+    if (minCost > cost) minCost = cost;
   });
 
-  return max;
+  return minCost;
 }
