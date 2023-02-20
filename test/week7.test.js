@@ -6,8 +6,8 @@ import bomberMan from '../src/week7/theBombermanGame';
 describe('theBombermanGame Test', () => {
   it('Must return the n array of strings that represent the grid in its final state', () => {
     const returnedValue = bomberMan(3, ['.......', '...O...', '....O..', '.......', 'OO.....', 'OO.....']);
-    const expectedValue = ['.......', '...O.O.', '...OO..', '..OOOO.', 'OOOOOOO', 'OOOOOOO'];
+    const expectedValue = ['OOO.OOO', 'OO...OO', 'OOO...O', '..OO.OO', '...OOOO', '...OOOO'];
 
-    expect(returnedValue).toBe(expectedValue);
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
