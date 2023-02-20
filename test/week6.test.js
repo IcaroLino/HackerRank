@@ -2,6 +2,7 @@ import {
   describe, expect, it,
 } from '@jest/globals';
 import counterGame from '../src/week6/counterGame';
+import formingMagicSquare from '../src/week6/formingAMagicSquare';
 import gamingArray from '../src/week6/gamingArray1';
 import superDigit from '../src/week6/recursiveDigitSum';
 import balancedSums from '../src/week6/sherlockAndArray';
@@ -65,7 +66,7 @@ describe('counterGame Test', () => {
 });
 
 describe('sumVsXor Test', () => {
-  it('Test Case 2 - Must return the number of values found', () => {
+  it('Test Case 1 - Must return the number of values found', () => {
     const returnedValue = sumXor(10);
     const expectedValue = 4;
 
@@ -75,6 +76,15 @@ describe('sumVsXor Test', () => {
   it('Test Case 2 - Must return the number of values found', () => {
     const returnedValue = sumXor(0);
     const expectedValue = 1;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('formingAMagicSquare Test', () => {
+  it('Must return the minimal total cost of converting the input square to a magic square', () => {
+    const returnedValue = formingMagicSquare([[4, 8, 2], [4, 5, 7], [6, 1, 6]]);
+    const expectedValue = 4;
 
     expect(returnedValue).toBe(expectedValue);
   });
