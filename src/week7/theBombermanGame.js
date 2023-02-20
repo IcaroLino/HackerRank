@@ -35,7 +35,6 @@ function detonate(grid) {
       if (element === 'O') detonateCoord.push([i, j]);
     });
   });
-  if (detonateCoord.length === 0) return grid;
 
   const copyGrid = grid.map((line) => line.replace(/[.]/g, 'O').split(''));
   detonateCoord.forEach((coordinates) => {
