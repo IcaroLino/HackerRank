@@ -28,6 +28,32 @@
  *  2. STRING_ARRAY grid
  */
 
-export default function bomberMan(n, grid) {
+function detonate(grid) {
+  const detonateCoord = [];
+  grid.forEach((lineGrid, i) => {
+    lineGrid.split('').forEach((element, j) => {
+      if (element === 'O') detonateCoord.push([i, j]);
+    });
+  });
+  if (detonateCoord.length === 0) return grid;
 
+  const copyGrid = grid.map((line) => line.replace(/[.]/g, 'O').split(''));
+  detonateCoord.forEach((coordinates) => {
+    copyGrid[coordinates[0]][coordinates[1]] = '.';
+    if (coordinates[0] > 0) copyGrid[coordinates[0] - 1][coordinates[1]] = '.';
+    if (coordinates[1] > 0) copyGrid[coordinates[0]][coordinates[1] - 1] = '.';
+    if (coordinates[0] < copyGrid.length - 1) copyGrid[coordinates[0] + 1][coordinates[1]] = '.';
+    if (coordinates[1] < copyGrid[0].length - 1) copyGrid[coordinates[0]][coordinates[1] + 1] = '.';
+  });
+
+  return copyGrid.map((line) => line.join(''));
+}
+
+export default function bomberMan(n, grid) {
+  if (n === 1) return grid;
+  if (n % 2 === 0) return grid.map((line) => line.replace(/[.]/g, 'O'));
+  if (n % 4 === 3) return detonate(grid);
+  if (n % 4 === 1) return detonate(detonate(grid));
+
+  return -1;
 }
