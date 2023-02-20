@@ -40,7 +40,7 @@ export default function pylons(k, arr) {
     count += 1;
     i = plantableIndex.indexOf(plantableIndex[i] + powerPlantGap);
 
-    if ((plantableIndex[i] + k - 1) >= (arr.length - 1)) return count;
+    if ((plantableIndex[i] + k - 1) >= (arr.length - 1)) break;
     i -= 1;
   }
   return count;
