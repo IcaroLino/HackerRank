@@ -1,6 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
+import climbingLeaderboard from '../src/week7/climbingtheLeaderboard';
 import pylons from '../src/week7/goodlandElectricity';
 import bomberMan from '../src/week7/theBombermanGame';
 
@@ -66,6 +67,15 @@ describe('goodlandElectricity Test', () => {
   it('Test Case 3 - Must return -1', () => {
     const returnedValue = pylons(2, [0, 0]);
     const expectedValue = -1;
+
+    expect(returnedValue).toBe(expectedValue);
+  });
+});
+
+describe('climbingTheLeaderboard Test', () => {
+  it('Must return the player s rank after each new score', () => {
+    const returnedValue = climbingLeaderboard([100, 100, 50, 40, 40, 20, 10], [5, 25, 50, 120]);
+    const expectedValue = [6, 4, 2, 1];
 
     expect(returnedValue).toBe(expectedValue);
   });
