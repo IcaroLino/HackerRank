@@ -1,7 +1,7 @@
 import {
   describe, expect, it,
 } from '@jest/globals';
-import climbingLeaderboard from '../src/week7/climbingtheLeaderboard';
+import climbingLeaderboard from '../src/week7/climbingTheLeaderboard';
 import pylons from '../src/week7/goodlandElectricity';
 import bomberMan from '../src/week7/theBombermanGame';
 
@@ -77,6 +77,6 @@ describe('climbingTheLeaderboard Test', () => {
     const returnedValue = climbingLeaderboard([100, 100, 50, 40, 40, 20, 10], [5, 25, 50, 120]);
     const expectedValue = [6, 4, 2, 1];
 
-    expect(returnedValue).toBe(expectedValue);
+    expect(returnedValue).toEqual(expectedValue);
   });
 });
